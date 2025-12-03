@@ -25,14 +25,24 @@
             color: #0366d6; /* GitHub blue */
             margin-bottom: 20px;
         }
-        a {
-            color: #0366d6;
+        /* --- Button Styling --- */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0366d6; /* GitHub blue background */
+            color: white; /* White text */
             text-decoration: none;
+            border-radius: 6px;
             font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-        a:hover {
-            text-decoration: underline;
+        .button:hover {
+            background-color: #005cc5; /* Slightly darker blue on hover */
+            text-decoration: none; /* Remove underline on hover */
         }
+        /* --- End Button Styling --- */
     </style>
 </head>
 <body>
@@ -41,13 +51,11 @@
         <p>Thanks for visiting! My personal website is currently being rebuilt and will be back soon with fresh content.</p>
         <p>In the meantime, you can check out my latest projects and activity on my main GitHub profile:</p>
 
-        <p>
-            <a href="https://github.com/DraakUSA" target="_blank">
-                Visit My GitHub Profile
-            </a>
-        </p>
+        <a href="https://github.com/DraakUSA" target="_blank" class="button">
+            GitHub Profile
+        </a>
 
-        <p>— Paul-Joseph de Werk</p>
+        <p style="margin-top: 30px;">— Paul-Joseph de Werk</p>
     </div>
 </body>
 </html>
