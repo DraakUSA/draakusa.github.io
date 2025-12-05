@@ -28,7 +28,7 @@ My passion for technology began in **8th grade**, and I have been actively progr
 I am immediately open to exploring new full-time roles, consulting opportunities, and projects where deep architectural expertise is valued. My experience spans the full software development lifecycle, from initial concept design to deployment and optimization.
 
 <p>
-  <strong>Download my resume:</strong> <a href="https://github.com/DraakUSA/draakusa.github.io/raw/main/assets/resume/DraakUSA_Resume.pdf" target="_blank" class="btn btn--primary">View Resume (PDF)</a>
+  <strong>Download my resume:</strong> <a href="https://github.com/DraakUSA/draakusa.github.io/raw/main/assets/resume/DraakUSA_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--primary">View Resume (PDF)</a>
 </p>
 
 ### 💻 Current Technical Focus
