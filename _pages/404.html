@@ -3,50 +3,68 @@ permalink: /404.html
 title: "Error 404: Lost in the Lair"
 excerpt: "Page not found. Lost in the Lair."
 sitemap: false
-layout: single # Recommended for standard pages
-author_profile: true
+layout: default # Recommended for standard pages
 ---
 
-<div class="page__content">
-  <div class="archive__item">
+<div id="main" role="main">
+  <div class="page__content">
 
-    <p class="page__lead" style="font-size: 1.1em; color: #444;">
-      <i class="fas fa-fire-extinguisher"></i> Page Missing.
-    </p>
-    <p class="page__lead">
-      It seems you've wandered off the map and into the Draak's treasure room...
-    </p>
+    {% if page.title %}<meta itemprop="headline" content="{{ page.title | replace: '|', '&#124;' | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+    {% if page.last_modified_at %}<meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
 
-    <hr>
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <header>
+        {% if page.title -%}
+        <h1 id="page-title" class="page__title" itemprop="headline">
+          <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+        </h1>
+        {%- endif %}
+        {% include page__meta.html %}
+      </header>
+    {% endunless %}
 
-    <h2 class="archive__subtitle">The Draak Investigates...</h2>
+    <div class="archive__item">
 
-    <p>
-      The specific gold coin you were looking for is not in this pile. After checking the logs (and smelling a whiff of smoke), I've determined what happened:
-    </p>
+      <p class="page__lead" style="font-size: 1.1em; color: #444;">
+        <i class="fas fa-fire-extinguisher"></i> Page Missing.
+      </p>
+      <p class="page__lead">
+        It seems you've wandered off the map and into the Draak's treasure room...
+      </p>
 
-    <blockquote style="border-left: 5px solid #ff4500; padding-left: 15px;">
-      <strong>Error Report:</strong> A rogue link was detected. It was promptly <span style="color: #ff4500; font-weight: bold;">incinerated</span> for daring to lead a guest astray.
-    </blockquote>
+      <hr>
 
-    <p>
-      As a Senior Software Engineer, I am dedicated to eliminating bugs, but sometimes a small flame gets away from me. This resource was either moved, never existed, or was deemed technically unsound and **sent to the void**.
-    </p>
+      <h2 class="archive__subtitle">The Draak Investigates...</h2>
 
-    <hr>
+      <p>
+        The specific gold coin you were looking for is not in this pile. After checking the logs (and smelling a whiff of smoke), I've determined what happened:
+      </p>
 
-    <h2 class="archive__subtitle">What to do next? (Don't wake the Draak!)</h2>
+      <blockquote style="border-left: 5px solid #ff4500; padding-left: 15px;">
+        <strong>Error Report:</strong> A rogue link was detected. It was promptly <span style="color: #ff4500; font-weight: bold;">incinerated</span> for daring to lead a guest astray.
+      </blockquote>
 
-    <ol>
-      <li><strong>Check the URL:</strong> Did you misspell the ancient decree?</li>
-      <li><strong>Return to Safety:</strong> Head back to the <a href="/">Homepage</a>.</li>
-      <li><strong>Search the Lair:</strong> Use the search bar (if available) to find the correct path.</li>
-      <li><strong>Report the Incident:</strong> If you believe this is a valid link that was unjustly burned, please <a href="https://github.com/DraakUSA/draakusa.github.io/issues/new" target="_blank">let me know</a>.</li>
-    </ol>
+      <p>
+        As a Senior Software Engineer, I am dedicated to eliminating bugs, but sometimes a small flame gets away from me. This resource was either moved, never existed, or was deemed technically unsound and **sent to the void**.
+      </p>
 
-    <p>
-      <small>Thank you for your understanding. And please, try not to step on the hoard.</small>
-    </p>
+      <hr>
 
+      <h2 class="archive__subtitle">What to do next? (Don't wake the Draak!)</h2>
+
+      <ol>
+        <li><strong>Check the URL:</strong> Did you misspell the ancient decree?</li>
+        <li><strong>Return to Safety:</strong> Head back to the <a href="/">Homepage</a>.</li>
+        <li><strong>Search the Lair:</strong> Use the search bar (if available) to find the correct path.</li>
+        <li><strong>Report the Incident:</strong> If you believe this is a valid link that was unjustly burned, please <a href="https://github.com/DraakUSA/draakusa.github.io/issues/new" target="_blank">let me know</a>.</li>
+      </ol>
+
+      <p>
+        <small>Thank you for your understanding. And please, try not to step on the hoard.</small>
+      </p>
+
+    </div>
   </div>
 </div>
