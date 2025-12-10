@@ -40,6 +40,8 @@ enable_copy_code_button  : # true, false (default)
 copyright                : "Paul-Joseph de Werk" # "copyright" name, defaults to site.title
 copyright_url            : # "copyright" URL, defaults to site.url
 
+date_format: "%Y-%m-%d"
+
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
@@ -358,3 +360,4 @@ defaults:
       share: true
       related: false
       permalink: /blog/:year/:month/:day/:title.html
+      show_date: true
