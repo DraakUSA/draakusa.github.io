@@ -55,7 +55,7 @@ As a **Senior Software Engineer and Systems Architect**, I am currently open to 
 
 This site is not just a showcase—it’s a living demonstration of my skills. I invite recruiters and hiring managers to review my technical discussions and project implementations.
 
-* You can find my full professional history and endorsements on **[LinkedIn](https://www.linkedin.com/in/dewerk/)**.
-* For detailed background, please **[View my Resume (PDF)](https://github.com/DraakUSA/draakusa.github.io/raw/main/assets/resume/DraakUSA_Resume.pdf)**.
+* You can find my full professional history and endorsements on **<a href="https://www.linkedin.com/in/dewerk/" target="_blank">LinkedIn</a>**.
+* For detailed background, please **<a href="{{ site.author.resume }}" target="_blank">View my Resume (PDF)</a>**.
 
 I look forward to this journey of sharing and learning. Thank you for visiting the Lair!
