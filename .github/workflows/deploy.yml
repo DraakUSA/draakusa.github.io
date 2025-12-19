@@ -35,7 +35,10 @@ jobs:
         run: npx eslint .
 
       - name: Execute Actionlint for Workflows
-        run: npx actionlint
+        shell: bash
+        run: |
+          bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+          ./actionlint
 
       - name: Execute Markdownlint for Docs
         uses: davidanson/markdownlint-cli2-action@v1
