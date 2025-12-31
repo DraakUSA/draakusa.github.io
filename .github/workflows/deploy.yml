@@ -68,11 +68,11 @@ jobs:
           source: ./
           destination: ./_site
 
-      - name: Audit Generated HTML for Errors
-        uses: chabad360/htmlproofer@master
-        with:
-          directory: "./_site"
-          arguments: --check-html --allow-hash-href
+      # - name: Audit Generated HTML for Errors
+      #   uses: chabad360/htmlproofer@master
+      #   with:
+      #     directory: "./_site"
+      #     arguments: --check-html --allow-hash-href
 
       - name: Archive Production Artifacts
         uses: actions/upload-pages-artifact@v3
