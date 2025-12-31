@@ -1,3 +1,12 @@
+{% comment %} 1. Define if this item is a draft or future-dated {% endcomment %}
+{% assign is_draft = false %}
+{% if post.draft or post.published == false %}
+  {% assign is_draft = true %}
+{% endif %}
+
+{% capture now %}{{'now' | date: '%Y-%m-%d'}}{% endcapture %}
+{% capture post_date %}{{post.date | date: '%Y-%m-%d'}}{% endcapture %}
+
 {% if post.header.teaser %}
   {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
 {% else %}
@@ -11,12 +20,26 @@
 {% endif %}
 
 <div class="{{ include.type | default: 'list' }}__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
+  {% comment %} 2. Added the 'is-draft' class to the article tag {% endcomment %}
+  <article class="archive__item {% if is_draft %}is-draft{% endif %}" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
+
+    {% comment %} 3. Added the status badges inside the teaser div {% endcomment %}
+    <div class="status-badge-container">
+      {% if is_draft %}
+        <span class="status-badge draft">DRAFT</span>
+      {% endif %}
+
+      {% if is_future %}
+        <span class="status-badge future">FUTURE</span>
+      {% endif %}
+    </div>
+
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
         <img src="{{ teaser | relative_url }}" alt="">
       </div>
     {% endif %}
+
     <h2 class="archive__item-title no_toc" itemprop="headline">
       {% if post.link %}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>

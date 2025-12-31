@@ -7,3 +7,46 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+/* The main card container anchor */
+.status-relative {
+  position: relative;
+  display: block;
+}
+
+/* Container to hold multiple badges */
+.status-badge-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row; // Side-by-side looks better on text-heavy list items
+  gap: 5px;
+  z-index: 10;
+}
+
+.status-badge {
+  padding: 2px 6px;
+  font-size: 0.65rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 3px;
+  text-transform: uppercase;
+  /* Add a slight transparency so they don't totally obscure text */
+  background-opacity: 0.9;
+}
+
+.status-badge.draft {
+  background-color: #e74c3c;
+}
+
+.status-badge.future {
+  background-color: #3498db;
+}
+
+/* Dimming for draft state */
+.archive__item.is-draft {
+  opacity: 0.6;
+  border: 1px dashed #ddd;
+  padding: 5px; // Optional: adds a bit of space around the dashed border
+}
